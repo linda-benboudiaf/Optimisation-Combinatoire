@@ -1,5 +1,5 @@
 SHELL=bash
-GCC=g++ -std=c++11 -Wall -Wextra -Werror -Wno-sign-compare -O2 
+GCC=g++ -std=c++11 -Wall -Wextra -Werror -Wno-sign-compare -O2
 
 .PHONY: 1 2 3
 
@@ -47,4 +47,3 @@ u2: u1 ugraph.2.test
 
 u3: u2 ugraph.3.test
 	./ugraph.3.test
-

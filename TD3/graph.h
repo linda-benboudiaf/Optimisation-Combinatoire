@@ -47,7 +47,7 @@ class DirectedGraph {
   void MakeSimple();
 
  private:
-  vector<vector<int> > neighbors_;
+  vector<vector<int>> neighbors_;
   int num_arcs_;
 };
 

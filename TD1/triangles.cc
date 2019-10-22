@@ -13,7 +13,7 @@ int NumTriangles(const UndirectedGraph& graph){
 
   // first, we build a sorted adj list. This is tedious! We should do this
   // in the graph class directly.
-  vector<vector<int>> sorted_adj;
+  vector<vector<int> > sorted_adj;
   for (int n1 = 0; n1 < num_nodes; n1++) {
     vector<int> vec1 = graph.Neighbors(n1);
     sort(vec1.begin(), vec1.end());

@@ -20,7 +20,7 @@ class UndirectedGraph {
 
   vector<int> GetNodesConnectedTo(int node) const;
 
-  vector<vector<int> > ConnectedComponents() const;
+  vector<vector<int>> ConnectedComponents() const;
 
  private:
   DirectedGraph dg_;
