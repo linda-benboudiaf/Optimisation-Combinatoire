@@ -1,5 +1,4 @@
 #include "tree.3.h"
-#include <iostream>
 //AllHights is same as Hights but for all sub-trees.
 vector<int> AllHeights(const vector<vector<int>>& enfants){
   int allNodes = enfants.size();
@@ -11,14 +10,15 @@ vector<int> AllHeights(const vector<vector<int>>& enfants){
 }
 
  int HeightsWithMem(int node, const vector<vector<int>>& enfants, vector<int>& GroupByLengthByChild){
-   int res = 0;
+   if(GroupByLengthByChild[node]>=0){
+     return GroupByLengthByChild[node];
+   }
     if (enfants[node].empty()){
       return 0;
-    }else{
-      for (int v : enfants[node]){
-        res = HeightsWithMem(v, enfants, GroupByLengthByChild);
-        GroupByLengthByChild[node] = res;
-      }
-      return res; // return H for a given node.
     }
+      int res = 0;
+      for (int v : enfants[node]){
+        res = max(res,HeightsWithMem(v, enfants, GroupByLengthByChild));
+      }
+      return GroupByLengthByChild[node] = res + 1; // return H for a given node.
 }
